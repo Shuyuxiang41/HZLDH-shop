@@ -144,6 +144,7 @@ body {
 }
 
 .product-detail img {
+  width: 100%;
   width: 400px;
   cursor: zoom-in;
   border-radius: 8px;
@@ -201,4 +202,40 @@ button:hover {
   max-height: 90%;
   border-radius: 10px;
   box-shadow: 0 0 30px #7a5fff;
+}
+/* 手機版樣式 */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr; /* 單欄 */
+  }
+
+  .product-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-detail img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-info {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .nav a {
+    padding: 8px 0;
+    display: block;
+  }
 }
