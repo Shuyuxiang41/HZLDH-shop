@@ -243,7 +243,11 @@ button:hover {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
+     display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
   }
 
   .navbar .logo {
@@ -277,5 +281,49 @@ button:hover {
 
   .navbar ul li a:hover {
     background-color: #ddd;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar .logo a {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .navbar ul li {
+    list-style: none;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #2e2e2e;
+    border-radius: 5px;
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .navbar ul li a:hover {
+    background-color: #444;
   }
 }
