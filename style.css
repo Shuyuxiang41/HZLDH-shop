@@ -5,6 +5,7 @@ body {
   padding: 0;
   background: #0a0a0a;  /* 超深黑 */
   color: #eee;  /* 白色字 */
+  overflow-x: hidden;
 }
 
 /* 導覽列 */
@@ -19,6 +20,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .navbar ul {
@@ -113,7 +115,7 @@ body {
 
 .product-card img {
   width: 100%;
-  height: 180px;
+  height: auto;
   object-fit: cover;
   border-bottom: 1px solid #4b00ff88;
 }
@@ -145,7 +147,7 @@ body {
 
 .product-detail img {
   width: 100%;
-  width: 400px;
+  max-width: 400px;
   cursor: zoom-in;
   border-radius: 8px;
   box-shadow: 0 0 15px #7a5fff;
@@ -203,6 +205,7 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 0 30px #7a5fff;
 }
+
 /* 手機版樣式 */
 @media (max-width: 768px) {
   body {
@@ -210,80 +213,6 @@ button:hover {
     padding: 10px;
   }
 
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr; /* 單欄 */
-  }
-
-  .product-detail {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-detail img {
-    width: 100%;
-    height: auto;
-  }
-
-  .product-info {
-    padding: 10px;
-    text-align: center;
-  }
-
-  .nav a {
-    padding: 8px 0;
-    display: block;
-  }
-}
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-     display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
-  }
-
-  .navbar .logo {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .navbar ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-
-  .navbar ul li {
-    list-style: none;
-    width: 100%;
-  }
-
-  .navbar ul li a {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #eeeeee;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #333;
-  }
-
-  .navbar ul li a:hover {
-    background-color: #ddd;
-  }
-}
-@media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -325,5 +254,25 @@ button:hover {
 
   .navbar ul li a:hover {
     background-color: #444;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .product-detail img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-info {
+    padding: 10px;
+    text-align: center;
   }
 }
