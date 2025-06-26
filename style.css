@@ -244,8 +244,8 @@ button:hover {
   .navbar ul li a {
     display: block;
     width: 100%;
-    padding: 10px;
-    background-color: #2e2e2e;
+    padding: 5px;
+    background-color: #1a1a2e;
     border-radius: 5px;
     text-align: left;
     color: #fff;
