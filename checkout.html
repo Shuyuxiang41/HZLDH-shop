@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>結帳頁面</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .checkout-form {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .checkout-form h1 {
+      margin-bottom: 20px;
+    }
+
+    .checkout-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .checkout-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .cart-summary {
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo"><a href="index.html">E39 模型商店</a></div>
+    <ul>
+      <li><a href="cart.html">購物車</a></li>
+    </ul>
+  </div>
+
+  <div class="checkout-form">
+    <h1>填爆訂單資訊</h1>
+
+    <form onsubmit="submitOrder(event)">
+      <label for="name">姓名</label>
+      <input type="text" id="name" required />
+
+      <label for="phone">電話</label>
+      <input type="tel" id="phone" required />
+
+      <label for="address">地址</label>
+      <input type="text" id="address" required />
+
+      <div class="cart-summary" id="cart-summary">
+        <strong>購物車內容載入中...</strong>
+      </div>
+
+      <button type="submit">送出訂單</button>
+    </form>
+  </div>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const summaryBox = document.getElementById("cart-summary");
+
+    if (cart.length === 0) {
+      summaryBox.innerHTML = "<p>購物車是空的，請先選購商品。</p>";
+    } else {
+      let total = 0;
+      const listHtml = cart.map(item => {
+        total += item.price * item.quantity;
+        return `<p>${item.name} × ${item.quantity} — NT$${item.price.toLocaleString()}</p>`;
+      }).join("");
+      summaryBox.innerHTML = listHtml + `<hr><p><strong>總計：NT$${total.toLocaleString()}</strong></p>`;
+    }
+
+    function submitOrder(e) {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert("購物車是空的，無法下單！");
+        return;
+      }
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const address = document.getElementById("address").value;
+
+      // 模擬送出訂單
+      alert(`✅ 訂單送出成功！\n\n姓名：${name}\n電話：${phone}\n地址：${address}\n感謝您的購買！`);
+
+      localStorage.removeItem("cartItems");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購物車</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo"><a href="index.html">後庄劉德華 模型商店</a></div>
+  </div>
+
+  <div class="cart-container">
+    <h1>我的購物車</h1>
+    <div id="cart-items"></div>
+    <p id="cart-total"></p>
+  </div>
+<a href="checkout.html"><button>前往結帳</button></a>
+
+  <script>
+    const items = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const container = document.getElementById("cart-items");
+    let total = 0;
+
+    if (items.length === 0) {
+      container.innerHTML = "<p>目前購物車是空的。</p>";
+    } else {
+      items.forEach(item => {
+        total += item.price * item.quantity;
+        const div = document.createElement("div");
+        div.innerHTML = `<strong>${item.name}</strong> x ${item.quantity} - NT$${item.price * item.quantity}`;
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById("cart-total").textContent = `總金額：NT$${total}`;
+  </script>
+
+</body>
+</html>
