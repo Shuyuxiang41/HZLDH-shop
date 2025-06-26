@@ -239,3 +239,43 @@ button:hover {
     display: block;
   }
 }
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar .logo {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .navbar ul li {
+    list-style: none;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .navbar ul li a:hover {
+    background-color: #ddd;
+  }
+}
