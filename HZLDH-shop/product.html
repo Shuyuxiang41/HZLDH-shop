@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>商品詳情</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo"><a href="HZLDH.html">後庄劉德華 模型商店</a></div>
+    <ul>
+      <li><a href="cart.html">購物車</a></li>
+    </ul>
+  </div>
+
+  <div class="product-detail">
+    <img id="mainImage" src="" alt="商品圖片" onclick="zoomImage(this)" />
+    <div class="product-info">
+      <h1 id="title">載入中...</h1>
+      <p class="price" id="price">載入中...</p>
+      <p class="description">載入中...</p>
+      <button onclick="addToCart()">別加入購物車</button>
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox" onclick="closeZoom()">
+    <img id="lightbox-img" />
+  </div>
+
+  <script>
+    // 從網址取商品ID
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get("product");
+
+    // 等待 script.js 中 productData 載入
+    window.addEventListener('load', () => {
+      if (!productId || !productData[productId]) {
+        document.body.innerHTML = "<h1>找不到此商品！</h1>";
+        return;
+      }
+      const product = productData[productId];
+      document.getElementById("title").textContent = product.name;
+      document.getElementById("price").textContent = "NT$" + product.price.toLocaleString();
+      document.querySelector(".description").textContent = product.description;
+      document.getElementById("mainImage").src = product.image;
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

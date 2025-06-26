@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>後庄劉德華 模型商店</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo"><a href="HZLDH.html">後庄劉德華 模型商店</a></div>
+    <ul>
+      <li><a href="#">沒有商品</a></li>
+      <li><a href="cart.html">也沒有購物車</a></li>
+    </ul>
+  </div>
+
+  <div class="filter-bar">
+    <label for="category">選擇分類：</label>
+    <select id="category" onchange="filterProducts()">
+      <option value="all">全部</option>
+      <option value="resin">樹脂模型</option>
+      <option value="diecast">金屬車模</option>
+    </select>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="搜尋商品..." oninput="filterProducts()" />
+  </div>
+
+  <div class="product-list">
+    <div class="product-card" data-category="resin">
+      <a href="product.html?product=e39-black">
+        <img src="images/HZLDH.jpg" alt="盜版 黑色模型" />
+        <h3>盜版 樹脂模型（黑）</h3>
+        <p>NT$99,877</p>
+      </a>
+    </div>
+
+    <div class="product-card" data-category="resin">
+      <a href="product.html?product=e39-white">
+        <img src="images/HZLDH.jpg" alt="仿冒 白色模型" />
+        <h3>仿冒 樹脂模型（黑）</h3>
+        <p>NT$87,877</p>
+      </a>
+    </div>
+
+    <div class="product-card" data-category="diecast">
+      <a href="product.html?product=m5-diecast">
+        <img src="images/HZLDH.jpg" alt="假的 金屬模型" />
+        <h3>假的 金屬車模(黑)</h3>
+        <p>NT$5,200</p>
+      </a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
