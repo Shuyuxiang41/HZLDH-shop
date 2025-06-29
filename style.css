@@ -117,7 +117,7 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-bottom: 1px solid #DAA52088;
+  border-bottom: 1px solid #DAA520; /* 修改成金色 */
 }
 
 .product-card h3 {
