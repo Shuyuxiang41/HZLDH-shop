@@ -57,7 +57,7 @@ a:active {
   text-decoration: underline;
 }
 .logo a {
-  color: #ffd700;
+  color: #0A0A0A;
   font-weight: 900;
   font-size: 22px;
   text-decoration: none;
@@ -70,7 +70,7 @@ a:active {
 
 /* 分類與搜尋欄背景透明度 */
 .filter-bar, .search-bar {
-  background: rgba(30, 30, 50, 0.7);
+  background: #0A0A0A;
   padding: 15px 30px;
   margin: 0;
   color: #ccc;
@@ -149,7 +149,7 @@ a:active {
 .product-detail {
   max-width: 900px;
   margin: 40px auto;
-  background: rgba(20, 20, 35, 0.9);
+  background: #0A0A0A;
   display: flex;
   padding: 30px;
   gap: 40px;
