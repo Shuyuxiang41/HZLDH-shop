@@ -44,6 +44,18 @@ body {
   text-decoration: underline;
 }
 
+/* 解決連結紫色問題：統一金色樣式 */
+a:link,
+a:visited {
+  color: #DAA520;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: #FFD700; /* hover 時更亮的金色 */
+  text-decoration: underline;
+}
 .logo a {
   color: #DAA520;
   font-weight: 900;
