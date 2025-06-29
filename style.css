@@ -47,7 +47,7 @@ body {
 /* 解決連結紫色問題：統一金色樣式 */
 a:link,
 a:visited {
-  color: #DAA520;
+  color: #0A0A0A;
   text-decoration: none;
 }
 
